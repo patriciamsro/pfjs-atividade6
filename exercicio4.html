@@ -13,8 +13,9 @@
     <div id="root"></div>
     <script type="text/babel">  
 
+        /* SOLUÇÃO INICIAL
+        
         var cont = 0;
-
         function incrementar() {
             const elemento = (
                 <div>
@@ -24,8 +25,25 @@
             );
             ReactDOM.render(elemento, document.getElementById("root"));
         }
+        incrementar();*/
 
-        incrementar();
+        /* SOLUÇÃO OTIMIZADA*/
+
+        var i = 0;
+        function Counter() {
+            return (
+                <div>
+                    <p>Contador = {i++}</p>
+                    <button onClick={playContador}>Incrementar</button>
+                </div>
+            );
+        }
+
+        function playContador() {
+            ReactDOM.render(<Counter/>, document.getElementById("root"));
+        }
+
+        playContador();
     </script>
 </body>
 </html>

@@ -10,10 +10,15 @@
     <title>Exercício 5</title>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">
+    </div>
+    <button onclick="playCounter()">Incrementar</button>
+
     <script type="text/babel">
 
-        var cont = 0;
+        /* SOLUÇÃO INICIAL
+
+        /*var cont = 0;
 
         function contador() {
             const elemento = (
@@ -28,8 +33,21 @@
         function play() {
             setInterval(contador, 1000);
         }
+        contador();*/ 
 
-        contador(); 
+        /* SOLUÇÃO OTIMIZADA*/
+
+        var i = 0;
+        function Counter() {
+            return <p> Contador = {i++}</p>;
+        }
+        function playContador() {
+            ReactDOM.render(<Counter />, document.getElementById("root"));
+        }
+        function playCounter() {
+            setInterval(playContador, 1000);
+        }
+        playContador();
     </script>
 </body>
 </html>

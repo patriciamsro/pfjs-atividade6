@@ -13,13 +13,22 @@
     <div id="root"></div>
     <script type="text/babel">
         
+        /* SOLUÇÃO INICIAL*/
+        
         function GetTime(props) {
             return <p> {props.hora.toLocaleTimeString()} </p>;
         }
 
         const elemento = <GetTime hora = {new Date()}/>;
-        
         ReactDOM.render(elemento, document.getElementById("root"));
+
+        /*SOLUÇÃO OTIMIZADA
+        
+        function GetTime() {
+            var data = new Date();
+            return <p>{data.toLocaleTimeString()}</p>; 
+        }
+        ReactDOM.render(<GetTime/>, document.getElementById("root"));*/
     </script>
 </body>
 </html>

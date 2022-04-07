@@ -12,9 +12,11 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
-        const elemento = <p>Hello, World!</p>
+        function HelloWorld() {
+            return <p>Hello, World!</p>
+        }
 
-        ReactDOM.render(elemento, document.getElementById("root"));
+        ReactDOM.render(<HelloWorld/>, document.getElementById("root"));
     </script>
 </body>
 </html>
